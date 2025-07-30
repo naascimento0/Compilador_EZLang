@@ -32,7 +32,6 @@ Desenvolver um analisador semântico que:
 │   │   └── SemanticChecker.java
 │   ├── tables/              # Implementação de tabelas de símbolos
 │   └── typing/              # Sistema de tipos (para lab futuro)
-├── Lab03_src/               # Códigos fonte de apoio
 ├── Lab03_Output/            # Saída gerada pelos testes
 └── Lab03_Output_Expected/   # Saída esperada para comparação
 ```
