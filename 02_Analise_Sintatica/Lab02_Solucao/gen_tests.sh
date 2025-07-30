@@ -3,18 +3,23 @@ CURRENT_DIR=$(pwd)
 ROOT=$(dirname "$CURRENT_DIR")  # Vai para 02_Analise_Sintatica
 PROJECT_ROOT=$(dirname "$ROOT")  # Vai para Compilador_EZLang
 
-ANTLR_PATH="$CURRENT_DIR/tools/antlr-4.13.2-complete.jar"
+ANTLR_PATH="$PROJECT_ROOT/tools/antlr-4.13.2-complete.jar"
 CLASS_PATH_OPTION="-cp .:$ANTLR_PATH"
 
 GRAMMAR_PREFIX=EZ
 GEN_PATH=parser
 
-IN="$ROOT/Lab02_Input"
+IN="$PROJECT_ROOT/Inputs_Labs"
 OUT="$ROOT/Lab02_Output"
 EXPECTED="$ROOT/Lab02_Output_Expected"
 
 # Verificar se o diretório de saída existe
 mkdir -p "$OUT"
+
+if [[ ! -d "$GEN_PATH" ]]; then
+    echo "Please run make first to generate the parser files."
+    exit 1
+fi
 
 cd "$GEN_PATH"
 for infile in "$IN"/*.ezl; do

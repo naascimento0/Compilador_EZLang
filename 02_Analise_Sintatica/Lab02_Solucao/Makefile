@@ -2,10 +2,12 @@
 JAVAC=javac
 # Comando da JVM
 JAVA=java
-# ROOT é a raiz dos diretórios com todos os roteiros de laboratórios
+# ROOT é a raiz do Laboratório
 ROOT=$(shell pwd)
+# PROJECT_ROOT é o diretório raiz do projeto
+PROJECT_ROOT=$(shell dirname $(shell dirname $(ROOT)))
 # Caminho para o JAR do ANTLR em labs/tools
-ANTLR_PATH=$(ROOT)/tools/antlr-4.13.2-complete.jar
+ANTLR_PATH=$(PROJECT_ROOT)/tools/antlr-4.13.2-complete.jar
 # Opção de configuração do CLASSPATH para o ambiente Java
 CLASSPATH=.:$(ANTLR_PATH)
 # Configuração do comando de compilação do ANTLR
